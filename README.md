@@ -1,2 +1,2 @@
 # webflux-api-rest-heroes
-WebFlux - Reactive programming
+java 17 - WebFlux - Reactive programming - Netty - H2 mem - postman

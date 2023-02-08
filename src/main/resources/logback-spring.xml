@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="stash" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>trace</level>
+        </filter>
+        <file>heroes-json.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>heroes-json.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+
+    <root level="all">
+        <appender-ref ref="stash" />
+    </root>
+</configuration>
