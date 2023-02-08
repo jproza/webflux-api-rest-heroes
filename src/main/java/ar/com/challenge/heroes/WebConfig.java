@@ -36,6 +36,9 @@ public class WebConfig implements WebFluxConfigurer {
         return route()
                 .GET("/api/heroes", heroeController::getAllHeroes)
                 .POST("/api/heroes",heroeController::createNewHeroe)
+                .GET("/api/heroes/{id}", heroeController::getHeroeById)
+                .PUT("/api/heroes/{id}", heroeController::updateHeroe)
+                .DELETE("/api/heroes/{id}", heroeController::deleteHeroe)
                 .build();
     }
 }
