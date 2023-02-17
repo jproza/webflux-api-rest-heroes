@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ar.com.challenge.heroes</groupId>
-    <artifactId>heroes-application</artifactId>
+    <artifactId>webflux-heroes-application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>webflux-heroes-application</name>
     <packaging>jar</packaging>
@@ -164,7 +164,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                         <manifest>
-                            <mainClass>com.example.demo.Application</mainClass>
+                            <mainClass>ar.com.challenge.heroes.Application</mainClass>
                         </manifest>
                     </archive>
 
@@ -179,6 +179,17 @@
                     </execution>
                 </executions>
             </plugin>
+
+
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <mainClass>ar.com.challenge.heroes.Application</mainClass>
+                        <layout>JAR</layout>
+                    </configuration>
+                </plugin>
+
 
         </plugins>
     </build>

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heroes-service-deploy
+  namespace: example-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: heroes-service
+  template:
+    metadata:
+      labels:
+        app: heroes-service
+    spec:
+      containers:
+        - name: heroes-service
+          image: jproza/webflux-heroes-service
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
